@@ -1,6 +1,6 @@
 package HTML::Shakan::Field;
 use Any::Moose;
-use HTML::Entities 'encode_entities';
+use HTML::Shakan::Utils;
 
 has id => (
     is => 'rw',
@@ -70,6 +70,11 @@ has inflator => (
     isa => 'Object',
 );
 
+has custom_validation => (
+    is => 'ro',
+    isa => 'CodeRef',
+);
+
 has constraints => (
     is  => 'ro',
     isa => 'ArrayRef',
@@ -137,6 +142,20 @@ label for this field.
 =item required
 
 is this field's value required?
+
+=item custom_validation
+
+    TextField(
+        name => 'id',
+        custom_validation => sub {
+            my ($form, $field) = @_;
+            if (is_reserved_id($form->param($field->name))) {
+                $form->set_error($field->name() => 'reserved');
+            }
+        }
+    )
+
+custom validation callback
 
 =item constraints
 

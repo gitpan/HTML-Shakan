@@ -35,12 +35,12 @@ lib/HTML/Shakan/Model/DataModel.pm
 lib/HTML/Shakan/Renderer/HTML.pm
 lib/HTML/Shakan/Role/Filter.pm
 lib/HTML/Shakan/Role/Model.pm
+lib/HTML/Shakan/Utils.pm
 lib/HTML/Shakan/Widgets/jQueryUI.pm
 lib/HTML/Shakan/Widgets/Simple.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
-nytprof.out
 README
 t/00_compile.t
 t/010_core/001_render.t
@@ -52,6 +52,9 @@ t/010_core/006_fillin_form.t
 t/010_core/007_fillin_date.t
 t/010_core/008_declare.t
 t/010_core/009_validator_message.t
+t/010_core/010_submitted.t
+t/010_core/011_custom_validation_form.t
+t/010_core/012_custom_validation_field.t
 t/020_inflator/001_datetime.t
 t/020_inflator/002_dt_join.t
 t/030_field/001_file.t

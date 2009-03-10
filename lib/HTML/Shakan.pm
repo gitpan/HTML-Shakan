@@ -1,6 +1,6 @@
 package HTML::Shakan;
 use Any::Moose;
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 use Carp ();
 
 use FormValidator::Lite 'Email', 'URL', 'Date', 'File';
@@ -13,6 +13,7 @@ use HTML::Shakan::Field::Input;
 use HTML::Shakan::Field::Date;
 use HTML::Shakan::Field::Choice;
 use HTML::Shakan::Field::File;
+use List::MoreUtils 'uniq';
 BEGIN {
     if ($ENV{SHAKAN_DEBUG}) {
         require Smart::Comments;
@@ -28,28 +29,52 @@ has '_fvl' => (
     is => 'ro',
     isa => 'FormValidator::Lite',
     lazy => 1,
-    handles => [qw/has_error load_function_message get_error_messages is_error is_valid/],
+    handles => [qw/has_error load_function_message get_error_messages is_error is_valid set_error/],
     weak_ref => 1,
     default => sub {
         my $self = shift;
         $self->params(); # build laziness data
 
+        FormValidator::Lite->new($self);
+    }
+);
+
+sub BUILD {
+    my $self = shift;
+
+    my $fvl = $self->_fvl;
+
+    # simple check
+    $fvl->check(do {
         my @c;
         for my $field (@{ $self->fields }) {
             push @c, $field->get_constraints();
         }
+        @c;
+    });
 
-        my $fvl = FormValidator::Lite->new($self);
-        $fvl->check(@c);
-        if ($fvl->is_valid) {
-            $self->_inflate_values();
-        } else {
-            $fvl->set_param_message(
-                $self->_set_error_messages()
-            );
-        }
-        return $fvl;
+    # run custom validation
+    if (my $cv = $self->custom_validation) {
+        $cv->( $self );
     }
+    for my $field ($self->fields) {
+        if (my $cv = $field->custom_validation) {
+            $cv->($self, $field);
+        }
+    }
+
+    if ($fvl->is_valid) {
+        $self->_inflate_values();
+    } else {
+        $fvl->set_param_message(
+            $self->_set_error_messages()
+        );
+    }
+}
+
+has custom_validation => (
+    is => 'ro',
+    isa => 'CodeRef',
 );
 
 sub _set_error_messages {
@@ -75,6 +100,31 @@ sub _inflate_values {
             }
         }
     }
+}
+
+has 'submitted' => (
+    is => 'ro',
+    isa => 'Bool',
+    lazy => 1,
+    builder => '_build_submitted',
+);
+sub _build_submitted {
+    my ($self, ) = @_;
+
+    my $r = $self->request;
+    my $submitted_field = (
+        scalar
+          grep { defined $r->param($_) }
+          uniq
+          map  { $_->name }
+                 $self->fields
+    );
+    return $submitted_field > 0 ? 1 : 0;
+}
+
+sub submitted_and_valid {
+    my $self = shift;
+    $self->submitted && $self->is_valid;
 }
 
 has model => (
@@ -282,6 +332,42 @@ HTML::Shakan - form html generator/validator
 HTML::Shakan is yet another form generator.
 
 THIS IS BETA.API WILL CHANGE.
+
+=head1 ATTRIBUTES
+
+=over 4
+
+=item custom_validation
+
+    form 'login' => (
+        fields => [
+            TextField(name => 'login_id'),
+            PasswordField(name => 'login_pw'),
+        ],
+        custom_validation => sub {
+            my $form = shift;
+            if ($form->is_valid && !MyDB->retrieve($form->param('login_id'), $form->param('login_pw'))) {
+                $form->set_error('login' => 'failed');
+            }
+        }
+    );
+
+You can set custom validation callback, validates the field set in the form. For example, this is useful for login form.
+
+=item submitted
+
+Returns true if the form has been submitted.
+
+This attribute will return true if a value for any known field name was submitted.
+
+=item has_error
+
+Return true if request has an error.
+
+=item submitted_and_valid
+                                                                      Shorthand for C<< $form->submitted && !$form->has_error >>
+
+=back
 
 =head1 benchmarking
 
