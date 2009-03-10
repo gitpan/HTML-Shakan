@@ -20,6 +20,8 @@ our @EXPORT = qw(
     ChoiceField
 
     DateField
+
+    Duplication
 );
 
 # DateTimeField
@@ -68,6 +70,15 @@ sub ChoiceField {
 
 sub DateField {
     HTML::Shakan::Field::Date->new( @_ );
+}
+
+sub Duplication {
+    my ($name, $f1, $f2) = @_;
+    Carp::croak('missing args. Usage: Duplication(name, field1, field2)') unless @_ == 3;
+    $f1->add_complex_constraint(
+        +{ $name => [ $f1->name(), $f2->name() ] } => [ 'DUPLICATION' ]
+    );
+    return ($f1, $f2);
 }
 
 1;
@@ -128,6 +139,10 @@ selector field.
 =item DateField(name => 'birthdate')
 
 date input field.
+
+=item Duplication('mail' => EmailField(), EmailField())
+
+both field contains same value?
 
 =back
 

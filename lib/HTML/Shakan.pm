@@ -1,6 +1,6 @@
 package HTML::Shakan;
 use Any::Moose;
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 use Carp ();
 
 use FormValidator::Lite 'Email', 'URL', 'Date', 'File';
@@ -29,7 +29,7 @@ has '_fvl' => (
     is => 'ro',
     isa => 'FormValidator::Lite',
     lazy => 1,
-    handles => [qw/has_error load_function_message get_error_messages is_error is_valid set_error/],
+    handles => [qw/has_error load_function_message get_error_messages is_error is_valid set_error set_message/],
     weak_ref => 1,
     default => sub {
         my $self = shift;

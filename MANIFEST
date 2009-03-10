@@ -59,6 +59,7 @@ t/020_inflator/001_datetime.t
 t/020_inflator/002_dt_join.t
 t/030_field/001_file.t
 t/030_field/002_image.t
+t/030_field/003_duplication.t
 t/040_model/001_datamodel.t
 t/dat/file_post.txt
 t/Util.pm
