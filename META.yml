@@ -19,10 +19,11 @@ recommends:
   Lingua::JA::Regular::Unicode: 0
 requires:
   Any::Moose: 0.05
+  Email::Valid::Loose: 0.05
   Filter::Util::Call: 0
   FormValidator::Lite: 0.02
   List::MoreUtils: 0.22
   Mouse: 0.19
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01_03
+version: 0.01_04
