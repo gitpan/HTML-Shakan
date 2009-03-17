@@ -5,7 +5,7 @@ author:
 build_requires:
   Test::More: 0
 distribution_type: module
-generated_by: 'Module::Install version 0.79'
+generated_by: 'Module::Install version 0.80'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,9 +21,9 @@ requires:
   Any::Moose: 0.05
   Email::Valid::Loose: 0.05
   Filter::Util::Call: 0
-  FormValidator::Lite: 0.02
+  FormValidator::Lite: 0.03
   List::MoreUtils: 0.22
   Mouse: 0.19
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01_04
+version: 0.01_05
