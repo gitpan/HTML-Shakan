@@ -5,7 +5,7 @@ author:
 build_requires:
   Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.48
+  ExtUtils::MakeMaker: 6.50
 distribution_type: module
 generated_by: 'Module::Install version 0.81'
 license: perl
@@ -28,4 +28,4 @@ requires:
   Mouse: 0.19
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01_06
+version: 0.01_07
