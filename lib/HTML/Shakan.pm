@@ -1,6 +1,6 @@
 package HTML::Shakan;
 use Any::Moose;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 use Carp ();
 
 use FormValidator::Lite 'Email', 'URL', 'Date', 'File';
@@ -320,7 +320,7 @@ HTML::Shakan - form html generator/validator
     }
 
     # in your template
-    <? if ($form->has_error) ?><div class="error"><?= $form->error_message ?></div><? } ?>
+    <? if ($form->has_error) { ?><div class="error"><?= $form->error_message() ?></div><? } ?>
     <form method="post" action="add">
     <?= $form->render() ?>
     <p><input type="submit" value="add" /></p>
@@ -364,7 +364,8 @@ This attribute will return true if a value for any known field name was submitte
 Return true if request has an error.
 
 =item submitted_and_valid
-                                                                      Shorthand for C<< $form->submitted && !$form->has_error >>
+
+Shorthand for C<< $form->submitted && !$form->has_error >>
 
 =back
 

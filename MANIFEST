@@ -16,6 +16,7 @@ inc/Test/Base/Filter.pm
 inc/Test/Builder.pm
 inc/Test/Builder/Module.pm
 inc/Test/More.pm
+inc/Test/Requires.pm
 lib/HTML/Shakan.pm
 lib/HTML/Shakan/Declare.pm
 lib/HTML/Shakan/Doc.ja.pod
@@ -32,6 +33,7 @@ lib/HTML/Shakan/Filter/WhiteSpace.pm
 lib/HTML/Shakan/Filters.pm
 lib/HTML/Shakan/Inflator/DateTime.pm
 lib/HTML/Shakan/Model/DataModel.pm
+lib/HTML/Shakan/Model/DBIxSkinny.pm
 lib/HTML/Shakan/Renderer/HTML.pm
 lib/HTML/Shakan/Role/Filter.pm
 lib/HTML/Shakan/Role/Model.pm
@@ -61,6 +63,7 @@ t/030_field/001_file.t
 t/030_field/002_image.t
 t/030_field/003_duplication.t
 t/040_model/001_datamodel.t
+t/040_model/002_skinny.t
 t/dat/file_post.txt
 t/Util.pm
 TODO

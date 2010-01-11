@@ -5,6 +5,7 @@ author:
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::More: 0
+  Test::Requires: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -27,7 +28,7 @@ requires:
   Filter::Util::Call: 0
   FormValidator::Lite: 0.03
   List::MoreUtils: 0.22
-  Mouse: 0.19
+  Mouse: 0.46
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04
