@@ -57,6 +57,7 @@ t/010_core/009_validator_message.t
 t/010_core/010_submitted.t
 t/010_core/011_custom_validation_form.t
 t/010_core/012_custom_validation_field.t
+t/010_core/013_render_field.t
 t/020_inflator/001_datetime.t
 t/020_inflator/002_dt_join.t
 t/030_field/001_file.t
