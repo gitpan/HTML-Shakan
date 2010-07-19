@@ -65,6 +65,7 @@ t/030_field/002_image.t
 t/030_field/003_duplication.t
 t/040_model/001_datamodel.t
 t/040_model/002_skinny.t
+t/999_regression/001_destructive_widget.t
 t/dat/file_post.txt
 t/Util.pm
 TODO

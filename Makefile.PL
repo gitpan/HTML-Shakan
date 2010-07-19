@@ -3,19 +3,19 @@ name 'HTML-Shakan';
 all_from 'lib/HTML/Shakan.pm';
 
 requires 'FormValidator::Lite' => 0.03;
-requires 'Any::Moose'          => 0.05;
-requires 'Mouse'               => 0.46;
+requires 'Any::Moose'          => 0.13;
+requires 'Mouse'               => 0.62;
 requires 'List::MoreUtils'     => 0.22;
 requires 'Email::Valid::Loose' => 0.05;
 
 recommends 'Lingua::JA::Regular::Unicode';
 
 test_requires 'Test::Requires';
+test_requires 'Test::More' => 0.94;
 
 tests 't/*.t t/*/*.t';
 author_tests 'xt';
 
-build_requires 'Test::More';
 use_test_base;
 auto_include;
 WriteAll;
