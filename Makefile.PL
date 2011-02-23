@@ -2,11 +2,12 @@ use inc::Module::Install;
 name 'HTML-Shakan';
 all_from 'lib/HTML/Shakan.pm';
 
-requires 'FormValidator::Lite' => 0.03;
+requires 'FormValidator::Lite' => 0.23;
 requires 'Any::Moose'          => 0.13;
-requires 'Mouse'               => 0.62;
+requires 'Mouse'               => 0.90;
 requires 'List::MoreUtils'     => 0.22;
 requires 'Email::Valid::Loose' => 0.05;
+requires 'parent';
 
 recommends 'Lingua::JA::Regular::Unicode';
 

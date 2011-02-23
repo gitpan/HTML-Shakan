@@ -24,9 +24,10 @@ requires:
   Any::Moose: 0.13
   Email::Valid::Loose: 0.05
   Filter::Util::Call: 0
-  FormValidator::Lite: 0.03
+  FormValidator::Lite: 0.23
   List::MoreUtils: 0.22
-  Mouse: 0.62
+  Mouse: 0.9
+  parent: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.07
+version: 0.08

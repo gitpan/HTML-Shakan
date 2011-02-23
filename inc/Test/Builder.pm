@@ -5,7 +5,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.97_01';
+our $VERSION = '0.96';
 $VERSION = eval $VERSION;    ## no critic (BuiltinFunctions::ProhibitStringyEval)
 
 BEGIN {
@@ -1255,8 +1255,8 @@ sub _open_testhandles {
     open( $Testout, ">&STDOUT" ) or die "Can't dup STDOUT:  $!";
     open( $Testerr, ">&STDERR" ) or die "Can't dup STDERR:  $!";
 
-    $self->_copy_io_layers( \*STDOUT, $Testout );
-    $self->_copy_io_layers( \*STDERR, $Testerr );
+    #    $self->_copy_io_layers( \*STDOUT, $Testout );
+    #    $self->_copy_io_layers( \*STDERR, $Testerr );
 
     $self->{Opened_Testhandles} = 1;
 
@@ -1271,22 +1271,14 @@ sub _copy_io_layers {
             require PerlIO;
             my @src_layers = PerlIO::get_layers($src);
 
-            _apply_layers($dst, @src_layers) if @src_layers;
+            binmode $dst, join " ", map ":$_", @src_layers if @src_layers;
         }
     );
 
     return;
 }
 
-sub _apply_layers {
-    my ($fh, @layers) = @_;
-    my %seen;
-    my @unique = grep { $_ ne 'unix' and !$seen{$_}++ } @layers;
-    binmode($fh, join(":", "", "raw", @unique));
-}
-
-
-#line 1920
+#line 1912
 
 sub reset_outputs {
     my $self = shift;
@@ -1298,7 +1290,7 @@ sub reset_outputs {
     return;
 }
 
-#line 1946
+#line 1938
 
 sub _message_at_caller {
     my $self = shift;
@@ -1319,7 +1311,7 @@ sub croak {
 }
 
 
-#line 1986
+#line 1978
 
 sub current_test {
     my( $self, $num ) = @_;
@@ -1352,7 +1344,7 @@ sub current_test {
     return $self->{Curr_Test};
 }
 
-#line 2034
+#line 2026
 
 sub is_passing {
     my $self = shift;
@@ -1365,7 +1357,7 @@ sub is_passing {
 }
 
 
-#line 2056
+#line 2048
 
 sub summary {
     my($self) = shift;
@@ -1373,14 +1365,14 @@ sub summary {
     return map { $_->{'ok'} } @{ $self->{Test_Results} };
 }
 
-#line 2111
+#line 2103
 
 sub details {
     my $self = shift;
     return @{ $self->{Test_Results} };
 }
 
-#line 2140
+#line 2132
 
 sub todo {
     my( $self, $pack ) = @_;
@@ -1394,7 +1386,7 @@ sub todo {
     return '';
 }
 
-#line 2167
+#line 2159
 
 sub find_TODO {
     my( $self, $pack, $set, $new_value ) = @_;
@@ -1408,7 +1400,7 @@ sub find_TODO {
     return $old_value;
 }
 
-#line 2187
+#line 2179
 
 sub in_todo {
     my $self = shift;
@@ -1417,7 +1409,7 @@ sub in_todo {
     return( defined $self->{Todo} || $self->find_TODO ) ? 1 : 0;
 }
 
-#line 2237
+#line 2229
 
 sub todo_start {
     my $self = shift;
@@ -1432,7 +1424,7 @@ sub todo_start {
     return;
 }
 
-#line 2259
+#line 2251
 
 sub todo_end {
     my $self = shift;
@@ -1453,7 +1445,7 @@ sub todo_end {
     return;
 }
 
-#line 2292
+#line 2284
 
 sub caller {    ## no critic (Subroutines::ProhibitBuiltinHomonyms)
     my( $self, $height ) = @_;
@@ -1468,9 +1460,9 @@ sub caller {    ## no critic (Subroutines::ProhibitBuiltinHomonyms)
     return wantarray ? @caller : $caller[0];
 }
 
-#line 2309
+#line 2301
 
-#line 2323
+#line 2315
 
 #'#
 sub _sanity_check {
@@ -1483,7 +1475,7 @@ sub _sanity_check {
     return;
 }
 
-#line 2344
+#line 2336
 
 sub _whoa {
     my( $self, $check, $desc ) = @_;
@@ -1498,7 +1490,7 @@ WHOA
     return;
 }
 
-#line 2368
+#line 2360
 
 sub _my_exit {
     $? = $_[0];    ## no critic (Variables::RequireLocalizedPunctuationVars)
@@ -1506,7 +1498,7 @@ sub _my_exit {
     return 1;
 }
 
-#line 2380
+#line 2372
 
 sub _ending {
     my $self = shift;
@@ -1625,7 +1617,7 @@ END {
     $Test->_ending if defined $Test;
 }
 
-#line 2568
+#line 2560
 
 1;
 

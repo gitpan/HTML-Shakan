@@ -18,7 +18,7 @@ sub _carp {
     return warn @_, " at $file line $line\n";
 }
 
-our $VERSION = '0.97_01';
+our $VERSION = '0.96';
 $VERSION = eval $VERSION;    ## no critic (BuiltinFunctions::ProhibitStringyEval)
 
 use Test::Builder::Module;
@@ -249,7 +249,7 @@ sub new_ok {
 
 #line 736
 
-sub subtest {
+sub subtest($&) {
     my ($name, $subtests) = @_;
 
     my $tb = Test::More->builder;
@@ -270,7 +270,7 @@ sub fail (;$) {
     return $tb->ok( 0, @_ );
 }
 
-#line 828
+#line 823
 
 sub use_ok ($;@) {
     my( $module, @imports ) = @_;
@@ -332,7 +332,7 @@ sub _eval {
     return( $eval_result, $eval_error );
 }
 
-#line 897
+#line 892
 
 sub require_ok ($) {
     my($module) = shift;
@@ -376,7 +376,7 @@ sub _is_module_name {
     return $module =~ /^[a-zA-Z]\w*$/ ? 1 : 0;
 }
 
-#line 974
+#line 969
 
 our( @Data_Stack, %Refs_Seen );
 my $DNE = bless [], 'Does::Not::Exist';
@@ -483,7 +483,7 @@ sub _type {
     return '';
 }
 
-#line 1134
+#line 1129
 
 sub diag {
     return Test::More->builder->diag(@_);
@@ -493,13 +493,13 @@ sub note {
     return Test::More->builder->note(@_);
 }
 
-#line 1160
+#line 1155
 
 sub explain {
     return Test::More->builder->explain(@_);
 }
 
-#line 1226
+#line 1221
 
 ## no critic (Subroutines::RequireFinalReturn)
 sub skip {
@@ -527,7 +527,7 @@ sub skip {
     last SKIP;
 }
 
-#line 1310
+#line 1305
 
 sub todo_skip {
     my( $why, $how_many ) = @_;
@@ -548,7 +548,7 @@ sub todo_skip {
     last TODO;
 }
 
-#line 1365
+#line 1360
 
 sub BAIL_OUT {
     my $reason = shift;
@@ -557,7 +557,7 @@ sub BAIL_OUT {
     $tb->BAIL_OUT($reason);
 }
 
-#line 1404
+#line 1399
 
 #'#
 sub eq_array {
@@ -697,7 +697,7 @@ WHOA
     }
 }
 
-#line 1551
+#line 1546
 
 sub eq_hash {
     local @Data_Stack = ();
@@ -732,7 +732,7 @@ sub _eq_hash {
     return $ok;
 }
 
-#line 1610
+#line 1605
 
 sub eq_set {
     my( $a1, $a2 ) = @_;
@@ -757,6 +757,6 @@ sub eq_set {
     );
 }
 
-#line 1812
+#line 1807
 
 1;

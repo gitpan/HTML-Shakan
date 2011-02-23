@@ -1,13 +1,22 @@
 use t::Util;
 use HTML::Shakan;
 use CGI;
-use Test::Requires 'DBIx::Skinny', 'DBD::SQLite';
+use Test::Requires {
+    'DBIx::Skinny' => 0.0740,
+    'DBD::SQLite'  => 1.31,
+};
 use Test::More;
 use HTML::Shakan::Model::DBIxSkinny;
 
 {
     package MyModel;
     use DBIx::Skinny;
+
+    package MyModel::Row;
+    use base qw/DBIx::Skinny::Row/;
+
+    package MyModel::Row::User;
+    use base qw/MyModel::Row/;
 
     package MyModel::Schema;
     use DBIx::Skinny::Schema;
