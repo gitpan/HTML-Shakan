@@ -4,6 +4,8 @@ author:
   - 'Tokuhiro Matsuno <tokuhirom  slkjfd gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
+  Test::More: 0.96
+  Test::Requires: 0.06
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -23,11 +25,11 @@ recommends:
 requires:
   Any::Moose: 0.13
   Email::Valid::Loose: 0.05
-  Filter::Util::Call: 0
-  FormValidator::Lite: 0.23
+  FormValidator::Lite: 0.24
   List::MoreUtils: 0.22
   Mouse: 0.9
   parent: 0
+  perl: 5.8.1
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.09
+version: 0.10
