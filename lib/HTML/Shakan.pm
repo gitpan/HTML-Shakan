@@ -1,6 +1,8 @@
 package HTML::Shakan;
+use strict;
+use warnings;
 use Any::Moose;
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 use Carp ();
 use 5.008001;
 
@@ -405,7 +407,7 @@ Render partial form named C<<$name>>.
 
 =head1 AUTHOR
 
-Tokuhiro Matsuno E<lt>tokuhirom  slkjfd gmail.comE<gt>
+Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>
 
 =head1 SEE ALSO
 
