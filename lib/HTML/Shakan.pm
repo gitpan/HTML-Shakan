@@ -2,7 +2,7 @@ package HTML::Shakan;
 use strict;
 use warnings;
 use Any::Moose;
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 use Carp ();
 use 5.008001;
 
@@ -116,7 +116,7 @@ sub _build_submitted {
     my $r = $self->request;
     my $submitted_field = (
         scalar
-          grep { defined $r->param($_) }
+          grep { defined $r->param($_) || defined $r->upload($_) }
           uniq
           map  { $_->name }
                  $self->fields

@@ -3,12 +3,12 @@ abstract: 'form html generator/validator'
 author:
   - 'Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>'
 build_requires:
-  Test::More: 0.96
+  Test::More: 0.98
   Test::Requires: 0.06
 configure_requires:
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112150'
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112621'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,7 +21,7 @@ no_index:
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 0.12
+    version: 0.13
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
     version: 0
@@ -95,4 +95,4 @@ requires:
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.12
+version: 0.13
