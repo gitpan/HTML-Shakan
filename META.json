@@ -46,7 +46,7 @@
    "provides" : {
       "HTML::Shakan" : {
          "file" : "lib/HTML/Shakan.pm",
-         "version" : "0.13"
+         "version" : "0.14"
       },
       "HTML::Shakan::Declare" : {
          "file" : "lib/HTML/Shakan/Declare.pm",
@@ -139,5 +139,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.13"
+   "version" : "0.14"
 }
