@@ -21,7 +21,7 @@ no_index:
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 0.14
+    version: 0.15
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
     version: 0
@@ -95,4 +95,4 @@ requires:
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.14
+version: 0.15
