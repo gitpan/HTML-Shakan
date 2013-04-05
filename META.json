@@ -1,13 +1,11 @@
 {
    "abstract" : "form html generator/validator",
    "author" : [
-      "Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>"
+      "Tokuhiro Matsuno <tokuhirom  slkjfd@ gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
-   "license" : [
-      "perl_5"
-   ],
+   "generated_by" : "Minilla/v0.0.49",
+   "license" : "perl_5",
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
@@ -16,128 +14,150 @@
    "no_index" : {
       "directory" : [
          "t",
-         "inc"
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples"
       ]
    },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Test::More" : "0.98",
-            "Test::Requires" : "0.06"
-         }
-      },
       "configure" : {
          "requires" : {
+            "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs" : "0",
             "Module::Build" : "0.38"
          }
       },
-      "runtime" : {
+      "develop" : {
          "requires" : {
-            "Any::Moose" : "0.13",
+            "Pod::Wordlist::hanekomu" : "0",
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spelling" : "0"
+         }
+      },
+      "runtime" : {
+         "recommends" : {
+            "CGI" : "0",
+            "DateTime" : "0",
+            "DateTime::Format::HTTP" : "0",
+            "HTML::Scrubber" : "0",
+            "Lingua::JA::Regular::Unicode" : "0",
+            "Mouse::Role" : "0",
+            "Scalar::Util" : "0"
+         },
+         "requires" : {
             "Email::Valid::Loose" : "0.05",
             "FormValidator::Lite" : "0.24",
             "List::MoreUtils" : "0.22",
             "Mouse" : "0.9",
-            "parent" : 0,
+            "parent" : "0",
             "perl" : "5.008001"
+         }
+      },
+      "test" : {
+         "recommends" : {
+            "DBIx::Skinny" : "0",
+            "DBIx::Skinny::Row" : "0",
+            "DBIx::Skinny::Schema" : "0",
+            "HTTP::Request::Common" : "0",
+            "Plack::Request" : "0",
+            "Plack::Test" : "0"
+         },
+         "requires" : {
+            "Test::More" : "0.98",
+            "Test::Requires" : "0.06"
          }
       }
    },
    "provides" : {
       "HTML::Shakan" : {
          "file" : "lib/HTML/Shakan.pm",
-         "version" : "0.15"
+         "version" : "0.16"
       },
       "HTML::Shakan::Declare" : {
-         "file" : "lib/HTML/Shakan/Declare.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Declare.pm"
       },
       "HTML::Shakan::Field" : {
-         "file" : "lib/HTML/Shakan/Field.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Field.pm"
       },
       "HTML::Shakan::Field::Choice" : {
-         "file" : "lib/HTML/Shakan/Field/Choice.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Field/Choice.pm"
       },
       "HTML::Shakan::Field::Date" : {
-         "file" : "lib/HTML/Shakan/Field/Date.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Field/Date.pm"
       },
       "HTML::Shakan::Field::File" : {
-         "file" : "lib/HTML/Shakan/Field/File.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Field/File.pm"
       },
       "HTML::Shakan::Field::Input" : {
-         "file" : "lib/HTML/Shakan/Field/Input.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Field/Input.pm"
       },
       "HTML::Shakan::Fields" : {
-         "file" : "lib/HTML/Shakan/Fields.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Fields.pm"
       },
       "HTML::Shakan::Filter::HTMLScrubber" : {
-         "file" : "lib/HTML/Shakan/Filter/HTMLScrubber.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Filter/HTMLScrubber.pm"
       },
       "HTML::Shakan::Filter::Hiragana" : {
-         "file" : "lib/HTML/Shakan/Filter/Hiragana.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Filter/Hiragana.pm"
       },
       "HTML::Shakan::Filter::KatakanaZ" : {
-         "file" : "lib/HTML/Shakan/Filter/KatakanaZ.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Filter/KatakanaZ.pm"
       },
       "HTML::Shakan::Filter::WhiteSpace" : {
-         "file" : "lib/HTML/Shakan/Filter/WhiteSpace.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Filter/WhiteSpace.pm"
       },
       "HTML::Shakan::Filters" : {
-         "file" : "lib/HTML/Shakan/Filters.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Filters.pm"
       },
       "HTML::Shakan::Inflator::DateTime" : {
-         "file" : "lib/HTML/Shakan/Inflator/DateTime.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Inflator/DateTime.pm"
       },
       "HTML::Shakan::Model::DBIxSkinny" : {
-         "file" : "lib/HTML/Shakan/Model/DBIxSkinny.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Model/DBIxSkinny.pm"
       },
       "HTML::Shakan::Model::DataModel" : {
-         "file" : "lib/HTML/Shakan/Model/DataModel.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Model/DataModel.pm"
       },
       "HTML::Shakan::Renderer::HTML" : {
-         "file" : "lib/HTML/Shakan/Renderer/HTML.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Renderer/HTML.pm"
       },
       "HTML::Shakan::Role::Filter" : {
-         "file" : "lib/HTML/Shakan/Role/Filter.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Role/Filter.pm"
       },
       "HTML::Shakan::Role::Model" : {
-         "file" : "lib/HTML/Shakan/Role/Model.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Role/Model.pm"
       },
       "HTML::Shakan::Utils" : {
-         "file" : "lib/HTML/Shakan/Utils.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Utils.pm"
       },
       "HTML::Shakan::Widgets::Simple" : {
-         "file" : "lib/HTML/Shakan/Widgets/Simple.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Widgets/Simple.pm"
       },
       "HTML::Shakan::Widgets::jQueryUI" : {
-         "file" : "lib/HTML/Shakan/Widgets/jQueryUI.pm",
-         "version" : 0
+         "file" : "lib/HTML/Shakan/Widgets/jQueryUI.pm"
       }
    },
    "release_status" : "stable",
    "resources" : {
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ]
+      "bugtracker" : {
+         "web" : "https://github.com/tokuhirom/html-shakan/issues"
+      },
+      "homepage" : "https://github.com/tokuhirom/html-shakan",
+      "repository" : {
+         "url" : "git://github.com/tokuhirom/html-shakan.git",
+         "web" : "https://github.com/tokuhirom/html-shakan"
+      }
    },
-   "version" : "0.15"
+   "version" : "0.16",
+   "x_contributors" : [
+      "gfx <gfuji@cpan.org>",
+      "Yoshihiro Sasaki <aloelight@gmail.com>",
+      "Nobuo Danjou <nobuo.danjou@gmail.com>",
+      "Masayuki Matsuki <y.songmu@gmail.com>",
+      "tokuhirom <tokuhirom@gmail.com>"
+   ]
 }

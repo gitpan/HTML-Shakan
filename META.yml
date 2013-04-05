@@ -1,14 +1,16 @@
 ---
 abstract: 'form html generator/validator'
 author:
-  - 'Tokuhiro Matsuno E<lt>tokuhirom  slkjfd@ gmail.comE<gt>'
+  - 'Tokuhiro Matsuno <tokuhirom  slkjfd@ gmail.com>'
 build_requires:
   Test::More: 0.98
   Test::Requires: 0.06
 configure_requires:
+  CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112621'
+generated_by: 'Minilla/v0.0.49, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,11 +19,15 @@ name: HTML-Shakan
 no_index:
   directory:
     - t
+    - xt
     - inc
+    - share
+    - eg
+    - examples
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 0.15
+    version: 0.16
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
     version: 0
@@ -85,8 +91,15 @@ provides:
   HTML::Shakan::Widgets::jQueryUI:
     file: lib/HTML/Shakan/Widgets/jQueryUI.pm
     version: 0
+recommends:
+  CGI: 0
+  DateTime: 0
+  DateTime::Format::HTTP: 0
+  HTML::Scrubber: 0
+  Lingua::JA::Regular::Unicode: 0
+  Mouse::Role: 0
+  Scalar::Util: 0
 requires:
-  Any::Moose: 0.13
   Email::Valid::Loose: 0.05
   FormValidator::Lite: 0.24
   List::MoreUtils: 0.22
@@ -94,5 +107,13 @@ requires:
   parent: 0
   perl: 5.008001
 resources:
-  license: http://dev.perl.org/licenses/
-version: 0.15
+  bugtracker: https://github.com/tokuhirom/html-shakan/issues
+  homepage: https://github.com/tokuhirom/html-shakan
+  repository: git://github.com/tokuhirom/html-shakan.git
+version: 0.16
+x_contributors:
+  - 'gfx <gfuji@cpan.org>'
+  - 'Yoshihiro Sasaki <aloelight@gmail.com>'
+  - 'Nobuo Danjou <nobuo.danjou@gmail.com>'
+  - 'Masayuki Matsuki <y.songmu@gmail.com>'
+  - 'tokuhirom <tokuhirom@gmail.com>'

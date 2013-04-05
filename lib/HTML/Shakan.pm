@@ -1,8 +1,8 @@
 package HTML::Shakan;
 use strict;
 use warnings;
-use Any::Moose;
-our $VERSION = '0.15';
+use Mouse;
+our $VERSION = '0.16';
 use Carp ();
 use 5.008001;
 
@@ -19,8 +19,8 @@ use HTML::Shakan::Field::File;
 use List::MoreUtils 'uniq';
 BEGIN {
     if ($ENV{SHAKAN_DEBUG}) {
-        require Smart::Comments;
-        Smart::Comments->import;
+#       require Smart::Comments;
+#       Smart::Comments->import;
     }
 };
 
@@ -272,9 +272,11 @@ sub _build_params {
     $params;
 }
 
-no Any::Moose;
+no Mouse;
 __PACKAGE__->meta->make_immutable;
 __END__
+
+=encoding utf-8
 
 =head1 NAME
 
