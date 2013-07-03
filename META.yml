@@ -1,7 +1,7 @@
 ---
-abstract: 'form html generator/validator'
+abstract: 'Form HTML generator/validator'
 author:
-  - 'Tokuhiro Matsuno <tokuhirom  slkjfd@ gmail.com>'
+  - 'Tokuhiro Matsuno <tokuhirom  @ gmail.com>'
 build_requires:
   Test::More: 0.98
   Test::Requires: 0.06
@@ -10,7 +10,7 @@ configure_requires:
   CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.0.49, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Minilla/v0.5.5, CPAN::Meta::Converter version 2.130880'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -24,73 +24,53 @@ no_index:
     - share
     - eg
     - examples
+    - author
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 0.16
+    version: 0.17
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
-    version: 0
   HTML::Shakan::Field:
     file: lib/HTML/Shakan/Field.pm
-    version: 0
   HTML::Shakan::Field::Choice:
     file: lib/HTML/Shakan/Field/Choice.pm
-    version: 0
   HTML::Shakan::Field::Date:
     file: lib/HTML/Shakan/Field/Date.pm
-    version: 0
   HTML::Shakan::Field::File:
     file: lib/HTML/Shakan/Field/File.pm
-    version: 0
   HTML::Shakan::Field::Input:
     file: lib/HTML/Shakan/Field/Input.pm
-    version: 0
   HTML::Shakan::Fields:
     file: lib/HTML/Shakan/Fields.pm
-    version: 0
   HTML::Shakan::Filter::HTMLScrubber:
     file: lib/HTML/Shakan/Filter/HTMLScrubber.pm
-    version: 0
   HTML::Shakan::Filter::Hiragana:
     file: lib/HTML/Shakan/Filter/Hiragana.pm
-    version: 0
   HTML::Shakan::Filter::KatakanaZ:
     file: lib/HTML/Shakan/Filter/KatakanaZ.pm
-    version: 0
   HTML::Shakan::Filter::WhiteSpace:
     file: lib/HTML/Shakan/Filter/WhiteSpace.pm
-    version: 0
   HTML::Shakan::Filters:
     file: lib/HTML/Shakan/Filters.pm
-    version: 0
   HTML::Shakan::Inflator::DateTime:
     file: lib/HTML/Shakan/Inflator/DateTime.pm
-    version: 0
   HTML::Shakan::Model::DBIxSkinny:
     file: lib/HTML/Shakan/Model/DBIxSkinny.pm
-    version: 0
   HTML::Shakan::Model::DataModel:
     file: lib/HTML/Shakan/Model/DataModel.pm
-    version: 0
   HTML::Shakan::Renderer::HTML:
     file: lib/HTML/Shakan/Renderer/HTML.pm
-    version: 0
   HTML::Shakan::Role::Filter:
     file: lib/HTML/Shakan/Role/Filter.pm
-    version: 0
   HTML::Shakan::Role::Model:
     file: lib/HTML/Shakan/Role/Model.pm
-    version: 0
   HTML::Shakan::Utils:
     file: lib/HTML/Shakan/Utils.pm
-    version: 0
   HTML::Shakan::Widgets::Simple:
     file: lib/HTML/Shakan/Widgets/Simple.pm
-    version: 0
   HTML::Shakan::Widgets::jQueryUI:
     file: lib/HTML/Shakan/Widgets/jQueryUI.pm
-    version: 0
 recommends:
   CGI: 0
   DateTime: 0
@@ -110,10 +90,11 @@ resources:
   bugtracker: https://github.com/tokuhirom/html-shakan/issues
   homepage: https://github.com/tokuhirom/html-shakan
   repository: git://github.com/tokuhirom/html-shakan.git
-version: 0.16
+version: 0.17
 x_contributors:
   - 'gfx <gfuji@cpan.org>'
   - 'Yoshihiro Sasaki <aloelight@gmail.com>'
   - 'Nobuo Danjou <nobuo.danjou@gmail.com>'
   - 'Masayuki Matsuki <y.songmu@gmail.com>'
+  - 'toritori0318 <toritori0318@gmail.com>'
   - 'tokuhirom <tokuhirom@gmail.com>'
