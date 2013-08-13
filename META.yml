@@ -10,7 +10,7 @@ configure_requires:
   CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.5.5, CPAN::Meta::Converter version 2.130880'
+generated_by: 'Minilla/v0.5.6, CPAN::Meta::Converter version 2.131560'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,7 +28,7 @@ no_index:
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 0.17
+    version: 0.18
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
   HTML::Shakan::Field:
@@ -90,11 +90,12 @@ resources:
   bugtracker: https://github.com/tokuhirom/html-shakan/issues
   homepage: https://github.com/tokuhirom/html-shakan
   repository: git://github.com/tokuhirom/html-shakan.git
-version: 0.17
+version: 0.18
 x_contributors:
   - 'gfx <gfuji@cpan.org>'
   - 'Yoshihiro Sasaki <aloelight@gmail.com>'
   - 'Nobuo Danjou <nobuo.danjou@gmail.com>'
   - 'Masayuki Matsuki <y.songmu@gmail.com>'
   - 'toritori0318 <toritori0318@gmail.com>'
-  - 'tokuhirom <tokuhirom@gmail.com>'
+  - 'moznion <moznion@gmail.com>'
+  - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'
