@@ -1,5 +1,12 @@
 Revision history for Perl extension HTML::Shakan
 
+1.999 2013-11-19T06:25:46Z
+    - fix documents and tests about HTML::Shakan::Field::Choice#choices
+      (HTML::Shakan::Field::Choice#choices accepts array ref of key-value pairs only)
+    - add documentation of `param` and `params`.
+    - [INCOMPATIBLE] change `param` method behaviour if multiple values are assigned.
+    - depends on Hash::MultiValue.
+
 1.00 2013-11-17T09:18:48Z
 
     - Use HTML::Escape while escaping HTML chars.

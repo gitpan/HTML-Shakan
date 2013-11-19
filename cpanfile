@@ -1,7 +1,9 @@
 requires 'Email::Valid::Loose', '0.05';
 requires 'FormValidator::Lite', '0.24';
+requires 'Hash::MultiValue';
 requires 'HTML::Escape';
 requires 'List::MoreUtils', '0.22';
+requires 'List::Util', '1.32';
 requires 'Mouse', '0.9';
 requires 'parent';
 requires 'perl', '5.008001';
@@ -25,6 +27,14 @@ on test => sub {
     recommends 'Plack::Test';
 };
 
+on configure => sub {
+    requires 'CPAN::Meta';
+    requires 'CPAN::Meta::Prereqs';
+    requires 'Module::Build';
+};
+
 on develop => sub {
-    # recommends 'HTML::FormFu';
+    requires 'Perl::Critic', '1.105';
+    requires 'Test::Perl::Critic', '1.02';
+    suggests 'HTML::FormFu';
 };

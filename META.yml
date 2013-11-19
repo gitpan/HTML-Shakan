@@ -10,7 +10,7 @@ configure_requires:
   CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.8.4, CPAN::Meta::Converter version 2.132830'
+generated_by: 'Minilla/v0.8.2, CPAN::Meta::Converter version 2.132510'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -29,7 +29,7 @@ no_index:
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 1.00
+    version: 1.999
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
   HTML::Shakan::Field:
@@ -84,20 +84,22 @@ requires:
   Email::Valid::Loose: 0.05
   FormValidator::Lite: 0.24
   HTML::Escape: 0
+  Hash::MultiValue: 0
   List::MoreUtils: 0.22
+  List::Util: 1.32
   Mouse: 0.9
   parent: 0
   perl: 5.008001
 resources:
-  bugtracker: https://github.com/tokuhirom/html-shakan/issues
-  homepage: https://github.com/tokuhirom/html-shakan
-  repository: git://github.com/tokuhirom/html-shakan.git
-version: 1.00
+  bugtracker: https://github.com/Songmu/html-shakan/issues
+  homepage: https://github.com/Songmu/html-shakan
+  repository: git://github.com/Songmu/html-shakan.git
+version: 1.999
 x_contributors:
   - 'gfx <gfuji@cpan.org>'
   - 'Yoshihiro Sasaki <aloelight@gmail.com>'
   - 'Nobuo Danjou <nobuo.danjou@gmail.com>'
   - 'toritori0318 <toritori0318@gmail.com>'
   - 'moznion <moznion@gmail.com>'
+  - 'tokuhirom <tokuhirom@gmail.com>'
   - 'Songmu <y.songmu@gmail.com>'
-  - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'

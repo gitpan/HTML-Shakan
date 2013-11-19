@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use HTML::Shakan;
-use Test::More tests => 18;
+use Test::More;
 use CGI;
 
 diag "FVL: $FormValidator::Lite::VERSION";
@@ -63,10 +63,18 @@ check(
 
 check(
     'ChoiceField',
-    [ ChoiceField( name => 'u', choices => [qw/a b c/] ) ],
+    [ ChoiceField( name => 'u', choices => [a => 'b', c => 'd'] ) ],
     [ CGI->new( { u => 'a' } ), 1 ],
     [ CGI->new( { u => 'd' } ), 0 ],
     [ CGI->new( { u => 'ad' } ), 0 ],
+);
+
+check(
+    'ChoiceField',
+    [ ChoiceField( name => 'u', choices => [a => 'a', b => 'b'] ) ],
+    [ CGI->new( { u => 'a' } ), 1 ],
+    [ CGI->new( { u => [qw/a b/] } ), 1 ],
+    [ CGI->new( { u => [qw/a c/] } ), 0 ],
 );
 
 check(
@@ -79,3 +87,5 @@ check(
         'birthdate_day'     => 3,
     } ), 1 ],
 );
+
+done_testing;
