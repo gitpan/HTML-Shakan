@@ -3,6 +3,7 @@ abstract: 'Form HTML generator/validator'
 author:
   - 'Tokuhiro Matsuno <tokuhirom  @ gmail.com>'
 build_requires:
+  CGI: 0
   Test::More: 0.98
   Test::Requires: 0.06
 configure_requires:
@@ -29,7 +30,7 @@ no_index:
 provides:
   HTML::Shakan:
     file: lib/HTML/Shakan.pm
-    version: 1.999
+    version: 2.00
   HTML::Shakan::Declare:
     file: lib/HTML/Shakan/Declare.pm
   HTML::Shakan::Field:
@@ -73,7 +74,6 @@ provides:
   HTML::Shakan::Widgets::jQueryUI:
     file: lib/HTML/Shakan/Widgets/jQueryUI.pm
 recommends:
-  CGI: 0
   DateTime: 0
   DateTime::Format::HTTP: 0
   HTML::Scrubber: 0
@@ -94,7 +94,7 @@ resources:
   bugtracker: https://github.com/Songmu/html-shakan/issues
   homepage: https://github.com/Songmu/html-shakan
   repository: git://github.com/Songmu/html-shakan.git
-version: 1.999
+version: 2.00
 x_contributors:
   - 'gfx <gfuji@cpan.org>'
   - 'Yoshihiro Sasaki <aloelight@gmail.com>'

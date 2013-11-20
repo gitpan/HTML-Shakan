@@ -97,11 +97,6 @@ THIS IS BETA.API WILL CHANGE.
 
     Returns form parameters. It is [Hash::MultiValue](http://search.cpan.org/perldoc?Hash::MultiValue) object.
 
-- `param($key:Str)`
-
-    Retrive the value of the key from parameters. It's behaviour is similar to traditional request objects. (ex. CGI, Plack::Request)
-    That is, it returns single scalar at scalar context and returns array at array context.
-
 # benchmarking
 
 form generation
@@ -115,7 +110,7 @@ form generation
 
 Shakan is 左官 in Japanese.
 
-If you want to know about shakan, please see [http://www.konuma-sakan.com/index2.html](http://www.konuma-sakan.com/index2.html)
+If you want to know about shakan, please see [http://ja.wikipedia.org/wiki/%E5%B7%A6%E5%AE%98](http://ja.wikipedia.org/wiki/%E5%B7%A6%E5%AE%98)
 
 左官 should pronounce 'sakan', formally. but, edokko pronounce 左官 as shakan.
 
@@ -128,6 +123,11 @@ If you want to know about shakan, please see [http://www.konuma-sakan.com/index2
 - `$shakan->render_field($name); :Str`
 
     Render partial form named `<$name`\>.
+
+- `$shakan->param($key:Str); :Value[s]`
+
+    Retrive the value of the key from parameters. It's behaviour is similar to traditional request objects. (ex. CGI, Plack::Request)
+    That is, it returns single scalar at scalar context and returns array at array context.
 
 # AUTHOR
 

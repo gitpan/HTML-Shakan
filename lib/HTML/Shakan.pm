@@ -2,7 +2,7 @@ package HTML::Shakan;
 use strict;
 use warnings;
 use Mouse;
-our $VERSION = '1.999';
+our $VERSION = '2.00';
 use Carp ();
 use 5.008001;
 
@@ -370,11 +370,6 @@ Shorthand for C<< $form->submitted && !$form->has_error >>
 
 Returns form parameters. It is L<Hash::MultiValue> object.
 
-=item C<param($key:Str)>
-
-Retrive the value of the key from parameters. It's behaviour is similar to traditional request objects. (ex. CGI, Plack::Request)
-That is, it returns single scalar at scalar context and returns array at array context.
-
 =back
 
 =head1 benchmarking
@@ -390,7 +385,7 @@ form generation
 
 Shakan is 左官 in Japanese.
 
-If you want to know about shakan, please see L<http://www.konuma-sakan.com/index2.html>
+If you want to know about shakan, please see L<http://ja.wikipedia.org/wiki/%E5%B7%A6%E5%AE%98>
 
 左官 should pronounce 'sakan', formally. but, edokko pronounce 左官 as shakan.
 
@@ -405,6 +400,11 @@ Render form.
 =item C<< $shakan->render_field($name); :Str >>
 
 Render partial form named C<<$name>>.
+
+=item C<< $shakan->param($key:Str); :Value[s] >>
+
+Retrive the value of the key from parameters. It's behaviour is similar to traditional request objects. (ex. CGI, Plack::Request)
+That is, it returns single scalar at scalar context and returns array at array context.
 
 =back
 
